@@ -1,54 +1,52 @@
-# React-power-tooltip
-
-![Travis (.org)](https://img.shields.io/travis/justinrhodes1/react-power-tooltip.svg)
-![Coveralls github branch](https://img.shields.io/coveralls/github/justinrhodes1/react-power-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-power-tooltip.svg)
+# React-power-tooltip-hooks
 
 <img width="250px" src="https://media.giphy.com/media/Rd6sPjQFVHOSwe9rbW/giphy.gif" />
+
+Hooks version from the original repo since it is no longer maintained.
+Check the original repo by Justin Rhodes here: https://github.com/justinrhodes1/react-power-tooltip
 
 A **powerful** and **elegant** alternative for all your tooltips and menu needs.
 
 - **Different Types** - For every use context: Choose between _Hoverable_, _Static_ &amp; _Alert_ tooltips.
 - **Fully Customizable** - Easily change default settings via props
 - **Reliable Positioning** - Align your tooltip to your
-target element with ease
+  target element with ease
 - **Advanced Customization** - Add your own animations and styles via separate CSS files
 
 ## DEMO
 
-Check out the [documentation &amp; demo](https://justinrhodes1.github.io/react-power-tooltip/) pages to see all use cases.
+Check out the OUTDATED [documentation &amp; demo](https://justinrhodes1.github.io/react-power-tooltip/) pages to see all use cases.
 
 ## Installation
 
 ### NPM
 
 ```bash
-npm install react-power-tooltip
+npm install react-power-tooltip-hooks
 ```
 
 ## Usage
 
-**Important**: Set the position of the hoverable parent component to *relative*.
+**Important**: Set the position of the hoverable parent component to _relative_.
 
 ```jsx
-import React, { Component } from "react";
-import Tooltip from "react-power-tooltip";
+import React, { useState } from "react";
+import Tooltip from "react-power-tooltip-hooks";
 
-class Example extends Component {
-    state = {
-        show: false
-    }
+const Home = () => {
+    const [show, setShow] = useState(false);
 
-    showTooltip = bool => {
-        this.setState({ show: bool })
+    const showTooltip = bool => {
+        setShow(bool);
     }
     render() {
         return (
-            <div 
+            <div
                 style={{ position: 'relative' }}
-                onMouseOver={() => this.showTooltip(true)} 
-                onMouseLeave={() => this.showTooltip(false)}
+                onMouseOver={() => showTooltip(true)}
+                onMouseLeave={() => showTooltip(false)}
             >
-                <Tooltip show={this.state.show}>
+                <Tooltip show={show}>
                     <span>Option 1</span>
                     <span>Option 2</span>
                 </Tooltip>
@@ -58,6 +56,7 @@ class Example extends Component {
 }
 export default Example;
 ```
+
 ## API
 
 | Props           | Types / Options                                           | Default             | Description                                                             |
@@ -84,8 +83,6 @@ export default Example;
 | arrowAlign      | string: 'start' _or_ 'center' _or_ 'end'                  | 'start'             | Positions arrow relative to textbox                                     |
 | position        | string: 'position1 position2'                             | 'right center'      | Positions tooltip relative to target element                            |
 
-
-
 ## Development
 
 You're welcome to contribute to react-power-tooltip.
@@ -107,6 +104,11 @@ The demo page will then be served on http://localhost:8000/ in watch mode, meani
         <img src="https://github.com/justinrhodes1.png" width="120">
         <br />
         <a href="https://github.com/justinrhodes1">Justin Rhodes<a/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/ncesar.png" width="120">
+        <br />
+        <a href="https://github.com/ncesar">César Nascimento<a/>
       </td>
     </tr>
   </tbody>
