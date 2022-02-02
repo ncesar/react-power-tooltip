@@ -1,6 +1,6 @@
 {
   "name": "react-power-tooltip-hooks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A powerful tooltip and menu component library for react.",
   "main": "./lib/index.js",
   "scripts": {
@@ -21,7 +21,8 @@
     "notification",
     "menu",
     "react",
-    "react-component"
+    "react-component",
+    "hooks"
   ],
   "license": "MIT",
   "peerDependencies": {
