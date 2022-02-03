@@ -30,30 +30,28 @@ npm install react-power-tooltip-hooks
 **Important**: Set the position of the hoverable parent component to _relative_.
 
 ```jsx
-import React, { useState } from "react";
-import Tooltip from "react-power-tooltip-hooks";
+import React, { useState } from 'react';
+import Tooltip from 'react-power-tooltip-hooks';
 
-const Home = () => {
-    const [show, setShow] = useState(false);
+const Example = () => {
+  const [show, setShow] = useState(false);
 
-    const showTooltip = bool => {
-        setShow(bool);
-    }
-    render() {
-        return (
-            <div
-                style={{ position: 'relative' }}
-                onMouseOver={() => showTooltip(true)}
-                onMouseLeave={() => showTooltip(false)}
-            >
-                <Tooltip show={show}>
-                    <span>Option 1</span>
-                    <span>Option 2</span>
-                </Tooltip>
-            </div>
-        );
-    }
-}
+  const showTooltip = (bool) => {
+    setShow(bool);
+  };
+  return (
+    <div
+      style={{ position: 'relative' }}
+      onMouseOver={() => showTooltip(true)}
+      onMouseLeave={() => showTooltip(false)}
+    >
+      <Tooltip show={show}>
+        <span>Option 1</span>
+        <span>Option 2</span>
+      </Tooltip>
+    </div>
+  );
+};
 export default Example;
 ```
 
